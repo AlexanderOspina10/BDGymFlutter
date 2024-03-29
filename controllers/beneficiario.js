@@ -58,7 +58,7 @@ const putBeneficiario = async(req, res) => {
 }
 
 const deleteBeneficiario = async (req, res) => { 
-    const { documentoBeneficiario } = req.body; // DESESTRUCTURAR
+    const { documentoBeneficiario } = req.query; // DESESTRUCTURAR
     let mensaje = '';
 
     try {
