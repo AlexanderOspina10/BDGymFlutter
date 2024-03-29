@@ -58,7 +58,7 @@ const putCliente = async(req, res) => {
 }
 
 const deleteCliente = async (req, res) => { 
-    const { documentoCliente } = req.body.documentoCliente; // DESESTRUCTURAR
+    const { documentoCliente } = req.body; // DESESTRUCTURAR
     let mensaje = '';
 
     try {
