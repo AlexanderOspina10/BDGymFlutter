@@ -2,6 +2,13 @@ const {Schema, model} = require('mongoose')
 
 const BeneficiarioSchema = ({
 
+
+    tipoDocumento:{
+        type: String,
+        //unique:[true, 'El nombre ingresado ya existe en el sistema'],
+        //required:[true, 'El nombre de beneficiario es requerido']
+    },
+
     documentoBeneficiario: {
         type:Number,
         unique:true,

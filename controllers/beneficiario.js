@@ -35,13 +35,13 @@ const postBeneficiario = async(req, res) => {
 }
 
 const putBeneficiario = async(req, res) => {
-    const {documentoBeneficiario, nombreBeneficiario, telefonoBeneficiario, correoBeneficiario, direccionBeneficiario, estadoBeneficiario} = req.body //DESESTRUCTURAR
+    const {tipoDocumento, documentoBeneficiario, nombreBeneficiario, telefonoBeneficiario, correoBeneficiario, direccionBeneficiario, estadoBeneficiario} = req.body //DESESTRUCTURAR
     let mensaje = ''
     try {
         const beneficiario = await Beneficiario.findOne({ documentoBeneficiario });
         if(beneficiario){
             const beneficiario = await Beneficiario.findOneAndUpdate({documentoBeneficiario: documentoBeneficiario},
-                {nombreBeneficiario:nombreBeneficiario, telefonoBeneficiario:telefonoBeneficiario,correoBeneficiario:correoBeneficiario,
+                {tipoDocumento:tipoDocumento,nombreBeneficiario:nombreBeneficiario, telefonoBeneficiario:telefonoBeneficiario,correoBeneficiario:correoBeneficiario,
                     direccionBeneficiario:direccionBeneficiario,estadoBeneficiario:estadoBeneficiario})
                 mensaje = 'Actualizacion existosa'
         }else{
